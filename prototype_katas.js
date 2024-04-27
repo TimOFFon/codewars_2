@@ -39,6 +39,8 @@ https://www.codewars.com/kata/58638bd2210be9a9690001f7/train/javascript
 7 kyu
 Array.prototype.size()
 
+==========================================================
+
 Реализуйте Array.prototype.size(), который должен просто 
 возвращать длину массива. Но сделайте это без использования 
 Array.prototype.length!
@@ -78,4 +80,40 @@ Array.prototype.length!
     //   console.log(arr.size());
     //   console.log(arr2.size());
     //   console.log(arr3.size());
+}
+
+
+/*=========================================================
+https://www.codewars.com/kata/56dd9b84fe5754786f0014f7/train/javascript
+
+8 kyu
+Implement Array.prototype.filter()
+
+============================================================
+
+Мы хотим реализовать функцию Array.prototype.filter(), 
+аналогичную существующей Array.prototype.filter(). 
+Другая похожая функция — _.filter() в underscore.js и 
+lodash.js.
+
+Использование будет довольно простым, например:
+
+[1, 2, 3, 4, 5].filter(num => num > 3) == [4, 5]
+
+Конечно, существующая функция Array.prototype.filter() 
+не определена для целей этого Ката.
+*/
+{
+    let arr = [1, 2, 3, 4, 5];
+
+    Array.prototype.filter = function (func) {
+        let arr = [];
+        this.map(el => {
+            if(func.call(this, el)) arr.push(el);
+        });
+        return arr;
+      }
+
+
+    //   console.log(arr.filter(num => num > 3));
 }
